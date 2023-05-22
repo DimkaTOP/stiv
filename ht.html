@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Мой сайт</title>
+	<style>
+		body {
+			background-image: url("bg.jpg");
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: center center;
+			margin: 0;
+			padding: 0;
+			font-family: Arial, sans-serif;
+			font-size: 16px;
+			color: #333;
+		}
+		.overlay {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 0.5);
+			z-index: 999;
+		}
+		.modal {
+			background-color: #fff;
+			padding: 20px;
+			border-radius: 10px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+			text-align: center;
+		}
+		.modal-yes-btn, .modal-no-btn {
+			display: inline-block;
+			padding: 10px 20px;
+			margin: 10px;
+			border: none;
+			border-radius: 5px;
+			font-size: 16px;
+			font-weight: bold;
+			cursor: pointer;
+		}
+		.modal-yes-btn {
+			background-color: green;
+			color: #fff;
+		}
+		.modal-no-btn {
+			background-color: red;
+			color: #fff;
+		}
+	</style>
+</head>
+<body>
+	<div class="overlay">
+		<div class="modal">
+			<p>Хочешь войти?</p>
+			<button class="modal-yes-btn">Да</button>
+			<button class="modal-no-btn">Нет</button>
+		</div>
+	</div>
+	<h1>Добро пожаловать на мой сайт!</h1>
+	<p>Здесь будет какой-то контент...</p>
+	<script>
+		// Получаем элементы всплывающего окна и кнопки
+		var overlay = document.querySelector('.overlay');
+		var modal = document.querySelector('.modal');
+		var yesBtn = document.querySelector('.modal-yes-btn');
+		var noBtn = document.querySelector('.modal-no-btn');
+
+		// Функция для закрытиявсплывающего окна
+		function closeModal() {
+			overlay.style.display = 'none';
+			modal.style.display = 'none';
+		}
+
+		// Обработчик клика на кнопку "Да"
+		yesBtn.addEventListener('click', function() {
+			closeModal();
+		});
+
+		// Обработчик клика на кнопку "Нет"
+		noBtn.addEventListener('click', function() {
+			alert('Ну и вали!');
+			closeModal();
+		});
+	</script>
+</body>
+</html>
